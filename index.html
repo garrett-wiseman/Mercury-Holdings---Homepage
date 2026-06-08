@@ -1,227 +1,345 @@
+Save this as `index.html` in the same folder as `Mercury Holdings Logo.png`.
+
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mercury Holdings, Inc.</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mercury Holdings, Inc.</title>
 
-<style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+  <style>
+    :root {
+      --dark: #111111;
+      --text: #1f2933;
+      --muted: #6b7280;
+      --gold: #b8892f;
+      --light: #f8f8f6;
+      --white: #ffffff;
+    }
 
-body {
-    font-family: "Segoe UI", Arial, sans-serif;
-    background: #f7f8fa;
-    color: #1f2937;
-    line-height: 1.6;
-}
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-header {
-    background: linear-gradient(135deg,#0f172a,#1e293b);
-    color: white;
-    padding: 80px 20px;
-    text-align: center;
-}
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background: var(--white);
+      line-height: 1.6;
+    }
 
-.logo {
-    width: 120px;
-    height: 120px;
-    margin: 0 auto 25px auto;
-    border-radius: 20px;
-    background: linear-gradient(135deg,#3b82f6,#2563eb);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 48px;
-    font-weight: bold;
-    color: white;
-}
+    header {
+      padding: 28px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #eee;
+      background: var(--white);
+    }
 
-header h1 {
-    font-size: 48px;
-    margin-bottom: 15px;
-}
+    .brand img {
+      height: 70px;
+      width: auto;
+      display: block;
+    }
 
-header p {
-    font-size: 20px;
-    opacity: .9;
-    max-width: 800px;
-    margin: auto;
-}
+    nav a {
+      margin-left: 28px;
+      color: var(--text);
+      text-decoration: none;
+      font-size: 14px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
 
-.container {
-    max-width: 1200px;
-    margin: auto;
-    padding: 70px 20px;
-}
+    .hero {
+      min-height: 620px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 80px 8%;
+      background:
+        linear-gradient(rgba(255,255,255,.92), rgba(255,255,255,.92)),
+        radial-gradient(circle at top, #f4ead8, #ffffff 55%);
+    }
 
-.section-title {
-    text-align: center;
-    font-size: 36px;
-    margin-bottom: 50px;
-}
+    .hero-content {
+      max-width: 900px;
+    }
 
-.about {
-    text-align: center;
-    max-width: 900px;
-    margin: auto;
-    font-size: 20px;
-}
+    .hero img {
+      width: 360px;
+      max-width: 85%;
+      margin-bottom: 40px;
+    }
 
-.investments {
-    display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
-    gap: 30px;
-    margin-top: 50px;
-}
+    .hero h1 {
+      font-size: 54px;
+      line-height: 1.1;
+      color: var(--dark);
+      margin-bottom: 24px;
+      font-weight: 400;
+      letter-spacing: 2px;
+    }
 
-.card {
-    background: white;
-    padding: 35px;
-    border-radius: 16px;
-    box-shadow: 0 5px 20px rgba(0,0,0,.08);
-}
+    .hero p {
+      font-size: 20px;
+      color: var(--muted);
+      max-width: 760px;
+      margin: 0 auto 35px;
+    }
 
-.card h3 {
-    margin-bottom: 15px;
-    color: #2563eb;
-}
+    .gold-line {
+      width: 120px;
+      height: 3px;
+      background: var(--gold);
+      margin: 0 auto;
+    }
 
-.contact {
-    background: #0f172a;
-    color: white;
-    text-align: center;
-    padding: 70px 20px;
-}
+    section {
+      padding: 85px 8%;
+    }
 
-.contact h2 {
-    margin-bottom: 25px;
-}
+    .section-inner {
+      max-width: 1100px;
+      margin: auto;
+    }
 
-.contact a {
-    color: #60a5fa;
-    text-decoration: none;
-}
+    .eyebrow {
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 13px;
+      margin-bottom: 12px;
+      font-weight: bold;
+    }
 
-footer {
-    background: #111827;
-    color: #9ca3af;
-    text-align: center;
-    padding: 30px;
-}
+    h2 {
+      font-size: 38px;
+      color: var(--dark);
+      margin-bottom: 24px;
+      font-weight: 400;
+    }
 
-footer a {
-    color: #9ca3af;
-    margin: 0 10px;
-    text-decoration: none;
-}
-</style>
+    .about p {
+      font-size: 19px;
+      color: var(--muted);
+      max-width: 900px;
+    }
+
+    .focus {
+      background: var(--light);
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+      margin-top: 42px;
+    }
+
+    .card {
+      background: var(--white);
+      padding: 36px;
+      border-radius: 4px;
+      border-top: 4px solid var(--gold);
+      box-shadow: 0 10px 30px rgba(0,0,0,.05);
+    }
+
+    .card h3 {
+      font-size: 23px;
+      margin-bottom: 14px;
+      color: var(--dark);
+      font-weight: 500;
+    }
+
+    .card p {
+      color: var(--muted);
+      font-size: 16px;
+    }
+
+    .stripe-note {
+      background: #111111;
+      color: white;
+      text-align: center;
+    }
+
+    .stripe-note h2 {
+      color: white;
+    }
+
+    .stripe-note p {
+      max-width: 820px;
+      margin: auto;
+      color: #d1d5db;
+      font-size: 18px;
+    }
+
+    .contact {
+      text-align: center;
+    }
+
+    .contact p {
+      color: var(--muted);
+      font-size: 18px;
+      margin-bottom: 8px;
+    }
+
+    .contact a {
+      color: var(--gold);
+      text-decoration: none;
+    }
+
+    footer {
+      padding: 35px 8%;
+      background: var(--light);
+      text-align: center;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    footer a {
+      color: var(--muted);
+      margin: 0 10px;
+      text-decoration: none;
+    }
+
+    @media (max-width: 850px) {
+      header {
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      nav a {
+        margin: 0 10px;
+      }
+
+      .hero h1 {
+        font-size: 38px;
+      }
+
+      .cards {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
 <header>
+  <div class="brand">
+    <img src="Mercury Holdings Logo.png" alt="Mercury Holdings, Inc. Logo" />
+  </div>
 
-<div class="logo">M</div>
-
-<h1>Mercury Holdings, Inc.</h1>
-
-<p>
-Building Long-Term Value Through Strategic Investments
-</p>
-
+  <nav>
+    <a href="#about">About</a>
+    <a href="#focus">Investment Focus</a>
+    <a href="#contact">Contact</a>
+  </nav>
 </header>
 
-<section class="container">
+<section class="hero">
+  <div class="hero-content">
+    <img src="Mercury Holdings Logo.png" alt="Mercury Holdings, Inc. Logo" />
 
-<h2 class="section-title">About Us</h2>
+    <h1>Strategic Investments. Long-Term Value.</h1>
 
-<div class="about">
-Mercury Holdings, Inc. is a private investment company focused on acquiring,
-owning, and growing businesses and assets in the technology,
-telecommunications, and residential real estate sectors. The company provides
-strategic capital, operational expertise, and long-term support to its
-portfolio investments with a disciplined focus on sustainable growth and value
-creation.
-</div>
+    <p>
+      Mercury Holdings, Inc. is a private investment company focused on owning
+      and growing businesses and assets in technology, telecommunications, and
+      residential real estate.
+    </p>
 
+    <div class="gold-line"></div>
+  </div>
 </section>
 
-<section class="container">
+<section id="about" class="about">
+  <div class="section-inner">
+    <div class="eyebrow">About Mercury Holdings</div>
 
-<h2 class="section-title">Investment Focus</h2>
+    <h2>Focused on disciplined growth and durable value creation.</h2>
 
-<div class="investments">
-
-<div class="card">
-<h3>Technology</h3>
-<p>
-Investing in innovative technology businesses, software platforms,
-digital infrastructure, and emerging technologies that create
-long-term competitive advantages.
-</p>
-</div>
-
-<div class="card">
-<h3>Telecommunications</h3>
-<p>
-Supporting broadband infrastructure, fiber networks,
-wireless technologies, and communications businesses
-serving residential and commercial customers.
-</p>
-</div>
-
-<div class="card">
-<h3>Residential Real Estate</h3>
-<p>
-Acquiring and managing residential real estate assets with
-a focus on long-term appreciation, stable cash flow,
-and strategic market positioning.
-</p>
-</div>
-
-</div>
-
+    <p>
+      Mercury Holdings, Inc. provides strategic oversight, operational expertise,
+      and capital support to its portfolio investments. The company takes a
+      long-term approach to building and managing businesses and assets across
+      sectors where technology, infrastructure, and real estate create meaningful
+      opportunities for sustainable growth.
+    </p>
+  </div>
 </section>
 
-<section class="contact">
+<section id="focus" class="focus">
+  <div class="section-inner">
+    <div class="eyebrow">Investment Focus</div>
 
-<h2>Contact Information</h2>
+    <h2>Core Areas of Investment</h2>
 
-<p>Mercury Holdings, Inc.</p>
+    <div class="cards">
+      <div class="card">
+        <h3>Technology</h3>
+        <p>
+          Investments in technology-enabled businesses, digital platforms,
+          software, and emerging opportunities with scalable growth potential.
+        </p>
+      </div>
 
-<p>
-Email:
-<a href="mailto:info@mercuryholdingsinc.com">
-info@mercuryholdingsinc.com
-</a>
-</p>
+      <div class="card">
+        <h3>Telecommunications</h3>
+        <p>
+          Investments in broadband infrastructure, communications networks,
+          fiber, wireless, and related operating businesses.
+        </p>
+      </div>
 
-<p>
-Website:
-<a href="https://mercuryholdingsinc.com">
-www.mercuryholdingsinc.com
-</a>
-</p>
+      <div class="card">
+        <h3>Residential Real Estate</h3>
+        <p>
+          Investments in residential real estate assets focused on long-term
+          appreciation, stable cash flow, and disciplined asset management.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
 
+<section class="stripe-note">
+  <div class="section-inner">
+    <h2>Electronic Payments & Operations</h2>
+
+    <p>
+      Mercury Holdings uses electronic payment tools to support administrative,
+      financial, and operational activities related to its business operations,
+      affiliated entities, and portfolio investments.
+    </p>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="section-inner">
+    <div class="eyebrow">Contact</div>
+
+    <h2>Mercury Holdings, Inc.</h2>
+
+    <p>Email: <a href="mailto:info@mercuryholdingsinc.com">info@mercuryholdingsinc.com</a></p>
+    <p>Website: <a href="https://mercuryholdingsinc.com">mercuryholdingsinc.com</a></p>
+  </div>
 </section>
 
 <footer>
-
-<p>
-© 2026 Mercury Holdings, Inc. All Rights Reserved.
-</p>
-
-<p style="margin-top:15px;">
-<a href="#">Privacy Policy</a>
-|
-<a href="#">Terms of Service</a>
-</p>
-
+  <p>© 2026 Mercury Holdings, Inc. All Rights Reserved.</p>
+  <p style="margin-top: 12px;">
+    <a href="privacy.html">Privacy Policy</a> |
+    <a href="terms.html">Terms of Service</a>
+  </p>
 </footer>
 
 </body>
 </html>
+```
